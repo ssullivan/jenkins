@@ -11,12 +11,12 @@ RUN apt-get update && apt-get install -qqy \
 
 # SCM Plugins
 RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh git-server:latest git:latest git-changelog:latest git-client:latest \
-	bitbucket:latest stashNotifier:latest 
+	bitbucket:latest stashNotifier:latest branch-api:latest
 
 # Build Related Plugins
 RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh python:latest gradle:latest selenium:latest \
 	jacoco:latest junit:latest repository-connector:latest findbugs:latest \
-	nodejs:latest
+	nodejs:latest javadoc:latest
 
 # Docker Plugins
 RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh docker-build-step:latest docker-commons:latest docker-custom-build-environment:latest docker-traceability:latest docker-workflow:latest
@@ -24,7 +24,8 @@ RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh docker-build-st
 # UI plugins
 RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh blueocean:latest blueocean-web:latest \
 	blueocean-git-pipeline:latest pipeline-stage-view:latest pipeline-stage-tags-metadata:latest \
-	pipeline-stage-step:latest pipeline-build-step:latest dashboard-view:latest
+	pipeline-stage-step:latest pipeline-build-step:latest dashboard-view:latest \
+	blueocean-pipeline-editor:latest blueocean-display-url:latest
 
 
 # Misc Plugins
@@ -37,7 +38,8 @@ RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh job-dsl:latest 
 	ssh-agent:latest \
 	ssh-credentials:latest \
 	pam-auth:latest \
-	greenballs:latest ldap:latest mailer:latest antisamy-markup-formatter:latest
+	greenballs:latest ldap:latest mailer:latest antisamy-markup-formatter:latest \
+	conditional-buildstep:latest matrix-auth:latest antisamy-markup-formatter:latest s3:latest
 	
 
 USER jenkins
