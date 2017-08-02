@@ -24,7 +24,7 @@ RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh docker-build-st
 # UI plugins
 RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh blueocean:latest blueocean-web:latest \
 	blueocean-git-pipeline:latest pipeline-stage-view:latest pipeline-stage-tags-metadata:latest \
-	pipeline-stage-step:latest pipeline-build-step:latest
+	pipeline-stage-step:latest pipeline-build-step:latest dashboard-view:latest
 
 
 # Misc Plugins
@@ -33,7 +33,10 @@ RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh job-dsl:latest 
 	email-ext:latest fluentd:latest delivery-pipeline-plugin:latest \
 	credentials:latest credentials-binding:latest branch-api:latest \
 	workflow-aggregator:latest pipeline-utility-steps:latest pipeline-stage-tags-metadata:latest \
-	hipchat:latest openstack-cloud:latest ssh-slaves:latest pam-auth:latest \
+	hipchat:latest openstack-cloud:latest ssh-slaves:latest \
+	ssh-agent:latest \
+	ssh-credentials:latest \
+	pam-auth:latest \
 	greenballs:latest ldap:latest mailer:latest antisamy-markup-formatter:latest
 	
 
