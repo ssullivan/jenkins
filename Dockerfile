@@ -19,7 +19,7 @@ RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh python:latest g
 	nodejs:latest javadoc:latest
 
 # Docker Plugins
-RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh docker-build-step:latest docker-commons:latest docker-custom-build-environment:latest docker-traceability:latest docker-workflow:latest
+RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh docker-plugin:latest docker-build-step:latest docker-commons:latest docker-custom-build-environment:latest docker-traceability:latest docker-workflow:latest
 
 # UI plugins
 RUN CURL_CONNECTION_TIMEOUT=30 /usr/local/bin/install-plugins.sh blueocean:latest blueocean-web:latest \
